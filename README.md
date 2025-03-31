@@ -23,7 +23,7 @@ const Component = () => {
   return (
     <div>
       {modal}
-      <button onClick={() => openModal()}>Open Modal</button>
+      <button onClick={openModal}>Open Modal</button>
     </div>
   );
 };

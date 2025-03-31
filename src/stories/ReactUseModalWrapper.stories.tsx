@@ -21,7 +21,7 @@ export const Default: Story = {
     return (
       <div>
         {modal}
-        <button onClick={() => openModal()}>Modal</button>
+        <button onClick={openModal}>Modal</button>
       </div>
     );
   }

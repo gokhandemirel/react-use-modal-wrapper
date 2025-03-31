@@ -1,20 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { createContext } from 'react';
-import { IDateCalendarContextProps } from '../types';
+import { IModalWrapperContextProps } from '../types';
 
-const ModalWrapperContext = createContext<IDateCalendarContextProps>({});
+const ModalWrapperContext = createContext<IModalWrapperContextProps>({});
 
-const ModalWrapperProvider = ({
-  options,
-  children,
-}: IDateCalendarContextProps) => {
-  const [showModal, setShowModal] = useState<boolean>(false);
+const ModalWrapperProvider = ({ showModal, setShowModal, options, children }: IModalWrapperContextProps) => {
   return (
     <ModalWrapperContext.Provider
       value={{
-        showModal,
-        setShowModal,
         options,
+        showModal,
+        setShowModal
       }}
     >
       {children}

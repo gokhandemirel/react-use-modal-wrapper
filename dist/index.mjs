@@ -1,4 +1,4 @@
-import m,{useState as h}from"react";import c,{useContext as x,useRef as v}from"react";import i from"styled-components";import N,{useState as P}from"react";import{createContext as f}from"react";var n=f({});import{useEffect as M}from"react";var p=(o,t)=>{M(()=>{let e=r=>{!o.current||o.current.contains(r.target)||t(r)};return document.addEventListener("mousedown",e),document.addEventListener("touchstart",e),()=>{document.removeEventListener("mousedown",e),document.removeEventListener("touchstart",e)}},[o,t])};var C=i.div`
+import m,{useState as b}from"react";import i,{useContext as v,useRef as W}from"react";import c from"styled-components";import M from"react";import{createContext as f}from"react";var p=f({}),d=({showModal:e,setShowModal:r,options:o,children:t})=>M.createElement(p.Provider,{value:{options:o,showModal:e,setShowModal:r}},t);import{useEffect as x}from"react";var l=(e,r)=>{x(()=>{let o=t=>{!e.current||e.current.contains(t.target)||r(t)};return document.addEventListener("mousedown",o),document.addEventListener("touchstart",o),()=>{document.removeEventListener("mousedown",o),document.removeEventListener("touchstart",o)}},[e,r])};var h=c.div`
   display: grid;
   justify-content: center;
   align-items: center;
@@ -8,7 +8,7 @@ import m,{useState as h}from"react";import c,{useContext as x,useRef as v}from"r
   position: fixed;
   left: 0;
   top: 0;
-`,b=i.div`
+`,g=c.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -18,4 +18,4 @@ import m,{useState as h}from"react";import c,{useContext as x,useRef as v}from"r
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.04);
-`;function d({children:o,className:t="",backdropClose:e,backdropClassName:r=""}){let{setShowModal:s}=x(n),a=v(null);return e&&p(a,()=>{s(!1)}),c.createElement(C,{className:r},c.createElement(b,{className:t,ref:a},o))}var O=({children:o,className:t="",backdropClose:e=!0,backdropClassName:r=""})=>{let[s,a]=h(!1),l=()=>a(!1),u=()=>a(!0);return{modal:s&&m.createElement(n.Provider,{value:{showModal:s,setShowModal:a}},m.createElement(d,{className:t,backdropClose:e,backdropClassName:r},o)),openModal:u,closeModal:l}};export{O as useModalWrapper};
+`;function n({children:e,className:r="",backdropClose:o,backdropClassName:t=""}){let{setShowModal:s}=v(p),a=W(null);return o&&l(a,()=>{s(!1)}),i.createElement(h,{className:t},i.createElement(g,{className:r,ref:a},e))}var D=({children:e,className:r="",backdropClose:o=!0,backdropClassName:t=""})=>{let[s,a]=b(!1);return{modal:s&&m.createElement(d,{showModal:s,setShowModal:a,options:{children:e,className:r,backdropClose:o,backdropClassName:t}},m.createElement(n,{className:r,backdropClose:o,backdropClassName:t},e)),openModal:()=>a(!0),closeModal:()=>a(!1)}};export{D as useModalWrapper};

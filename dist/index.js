@@ -1,4 +1,4 @@
-var h=Object.create;var l=Object.defineProperty;var g=Object.getOwnPropertyDescriptor;var W=Object.getOwnPropertyNames;var N=Object.getPrototypeOf,P=Object.prototype.hasOwnProperty;var k=(e,o)=>{for(var t in o)l(e,t,{get:o[t],enumerable:!0})},f=(e,o,t,a)=>{if(o&&typeof o=="object"||typeof o=="function")for(let r of W(o))!P.call(e,r)&&r!==t&&l(e,r,{get:()=>o[r],enumerable:!(a=g(o,r))||a.enumerable});return e};var p=(e,o,t)=>(t=e!=null?h(N(e)):{},f(o||!e||!e.__esModule?l(t,"default",{value:e,enumerable:!0}):t,e)),E=e=>f(l({},"__esModule",{value:!0}),e);var L={};k(L,{useModalWrapper:()=>R});module.exports=E(L);var d=p(require("react"));var s=p(require("react")),i=p(require("styled-components"));var M=p(require("react")),x=require("react"),c=(0,x.createContext)({});var v=require("react"),C=(e,o)=>{(0,v.useEffect)(()=>{let t=a=>{!e.current||e.current.contains(a.target)||o(a)};return document.addEventListener("mousedown",t),document.addEventListener("touchstart",t),()=>{document.removeEventListener("mousedown",t),document.removeEventListener("touchstart",t)}},[e,o])};var w=i.default.div`
+var g=Object.create;var d=Object.defineProperty;var b=Object.getOwnPropertyDescriptor;var P=Object.getOwnPropertyNames;var C=Object.getPrototypeOf,E=Object.prototype.hasOwnProperty;var w=(o,e)=>{for(var r in e)d(o,r,{get:e[r],enumerable:!0})},u=(o,e,r,t)=>{if(e&&typeof e=="object"||typeof e=="function")for(let a of P(e))!E.call(o,a)&&a!==r&&d(o,a,{get:()=>e[a],enumerable:!(t=b(e,a))||t.enumerable});return o};var l=(o,e,r)=>(r=o!=null?g(C(o)):{},u(e||!o||!o.__esModule?d(r,"default",{value:o,enumerable:!0}):r,o)),I=o=>u(d({},"__esModule",{value:!0}),o);var R={};w(R,{useModalWrapper:()=>N});module.exports=I(R);var n=l(require("react"));var s=l(require("react")),c=l(require("styled-components"));var M=l(require("react")),f=require("react"),i=(0,f.createContext)({}),x=({showModal:o,setShowModal:e,options:r,children:t})=>M.default.createElement(i.Provider,{value:{options:r,showModal:o,setShowModal:e}},t);var v=require("react"),W=(o,e)=>{(0,v.useEffect)(()=>{let r=t=>{!o.current||o.current.contains(t.target)||e(t)};return document.addEventListener("mousedown",r),document.addEventListener("touchstart",r),()=>{document.removeEventListener("mousedown",r),document.removeEventListener("touchstart",r)}},[o,e])};var k=c.default.div`
   display: grid;
   justify-content: center;
   align-items: center;
@@ -8,7 +8,7 @@ var h=Object.create;var l=Object.defineProperty;var g=Object.getOwnPropertyDescr
   position: fixed;
   left: 0;
   top: 0;
-`,I=i.default.div`
+`,L=c.default.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -18,4 +18,4 @@ var h=Object.create;var l=Object.defineProperty;var g=Object.getOwnPropertyDescr
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.04);
-`;function m({children:e,className:o="",backdropClose:t,backdropClassName:a=""}){let{setShowModal:r}=(0,s.useContext)(c),n=(0,s.useRef)(null);return t&&C(n,()=>{r(!1)}),s.default.createElement(w,{className:a},s.default.createElement(I,{className:o,ref:n},e))}var R=({children:e,className:o="",backdropClose:t=!0,backdropClassName:a=""})=>{let[r,n]=(0,d.useState)(!1),u=()=>n(!1),b=()=>n(!0);return{modal:r&&d.default.createElement(c.Provider,{value:{showModal:r,setShowModal:n}},d.default.createElement(m,{className:o,backdropClose:t,backdropClassName:a},e)),openModal:b,closeModal:u}};0&&(module.exports={useModalWrapper});
+`;function m({children:o,className:e="",backdropClose:r,backdropClassName:t=""}){let{setShowModal:a}=(0,s.useContext)(i),p=(0,s.useRef)(null);return r&&W(p,()=>{a(!1)}),s.default.createElement(k,{className:t},s.default.createElement(L,{className:e,ref:p},o))}var N=({children:o,className:e="",backdropClose:r=!0,backdropClassName:t=""})=>{let[a,p]=(0,n.useState)(!1);return{modal:a&&n.default.createElement(x,{showModal:a,setShowModal:p,options:{children:o,className:e,backdropClose:r,backdropClassName:t}},n.default.createElement(m,{className:e,backdropClose:r,backdropClassName:t},o)),openModal:()=>p(!0),closeModal:()=>p(!1)}};0&&(module.exports={useModalWrapper});

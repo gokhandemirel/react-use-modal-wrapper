@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface IModalWrapperProps {
     children?: React.ReactNode;
     className?: string;
@@ -11,6 +9,7 @@ interface IModalWrapperResponse {
     openModal?: () => void;
     closeModal?: () => void;
 }
-declare const useModalWrapper: ({ children, className, backdropClose, backdropClassName, }: IModalWrapperProps) => IModalWrapperResponse;
+
+declare const useModalWrapper: ({ children, className, backdropClose, backdropClassName }: IModalWrapperProps) => IModalWrapperResponse;
 
 export { useModalWrapper };

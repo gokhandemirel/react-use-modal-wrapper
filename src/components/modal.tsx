@@ -34,12 +34,7 @@ const Wrapper = styled.div`
   box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.04);
 `;
 
-export default function Modal({
-  children,
-  className = '',
-  backdropClose,
-  backdropClassName = '',
-}: IModalProps) {
+export default function Modal({ children, className = '', backdropClose, backdropClassName = '' }: IModalProps) {
   const { setShowModal } = useContext(ModalWrapperContext);
   const ref = useRef<HTMLDivElement | null>(null);
 

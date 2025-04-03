@@ -21,7 +21,28 @@ export const Default: Story = {
     return (
       <div>
         {modal}
-        <button onClick={openModal}>Modal</button>
+        <button onClick={() => openModal()}>Modal</button>
+      </div>
+    );
+  }
+};
+
+export const CustomClose: Story = {
+  render: () => {
+    const { modal, openModal, closeModal } = useModalWrapper({
+      children: (
+        <div>
+          <span>React use modal wrapper</span>
+          <br />
+          <button onClick={() => closeModal()}>Close</button>
+        </div>
+      )
+    });
+
+    return (
+      <div>
+        {modal}
+        <button onClick={() => openModal()}>Modal</button>
       </div>
     );
   }

@@ -1,15 +1,24 @@
-# react-use-modal-wrapper
+# React Use Modal Wrapper
 
-## Getting Started
+A lightweight and customizable modal hook for React. Easily add modals to your app with minimal code.
+
+## Features
+
+- Easy integration with React apps
+- TypeScript support
+- Customizable modal content and styles
+- Backdrop close functionality
+
+## Install
 
 ```bash
-  npm install react-use-modal-wrapper
+npm install react-use-modal-wrapper
 ```
 
-## Requirements
+### Requirements
 
-- `react >= 18.3.1`
-- `react-dom >= 18.3.1`
+- React >= 18.3.1
+- React-DOM >= 18.3.1
 
 ## Usage
 
@@ -17,34 +26,38 @@
 import React from 'react';
 import { useModalWrapper } from 'react-use-modal-wrapper';
 
-const Component = () => {
-
+const MyComponent = () => {
   const { modal, openModal, closeModal } = useModalWrapper({
-    className: '',
-    children: <div>Modal Content</div>,
-    backdropClose: true,
-    backdropClassName: ''
+    className: 'my-modal', // Optional: custom class for modal content
+    children: <div>My Modal Content</div>, // Modal content as a React Node
+    backdropClose: true, // Optional: closes modal when clicking backdrop
+    backdropClassName: 'my-backdrop', // Optional: custom class for backdrop
   });
+
   return (
     <div>
-      {modal}
-      <button onClick={openModal}>Open Modal</button>
+      {modal} {/* Renders the modal */}
+      <button onClick={openModal}>Open Modal</button> {/* Opens modal on click */}
     </div>
   );
 };
 ```
 
 ## Props
-- `className?` - Modal content className
-- `children?` - Modal content react node
-- `backdropClose?` - Backdrop auto close
-- `backdropClassName?` - Modal backdrop className
 
-## Return properties
-- `modal?` - Modal html node
-- `openModal?` - Open modal function,
-- `closeModal?` - Close modal function
+- **`className?`**: Class name for the modal content.
+- **`children?`**: Modal content to render inside the modal.
+- **`backdropClose?`**: Whether clicking the backdrop closes the modal.
+- **`backdropClassName?`**: Class name for the modal backdrop.
+ 
+## Return Values
 
-## LICENSE
+The hook returns an object with the following properties:
 
-[MIT](LICENSE)
+- **`modal?`**: The modal HTML/JSX node to be rendered.
+- **`openModal?`**: Function to open the modal.
+- **`closeModal?`**: Function to close the modal.
+
+## License
+
+[MIT LICENSE](LICENSE)
